@@ -20,7 +20,7 @@ function promptUser() {
         {
             name:"installation_instructions",
             type: "input",
-            message: "How do you install your project?"
+            message: "How do you install your project?",
         },
         {
             name: "usage_instructions",
@@ -30,7 +30,14 @@ function promptUser() {
         {
             name: "project_credits",
             type: "input" ,
-            message: "Please list collaborators for the project and their contributions."
+            message: "Please list collaborators for the project and their contributions.",
+
+        },
+        {
+            name: "test_instructions",
+            type: "input" ,
+            message: "What are the test instructions?",
+
 
         },
         {
@@ -41,7 +48,7 @@ function promptUser() {
                 "Apache",
                 "MIT",
                 "ISC",
-                "GNU GPL v3"
+                "GNU GPL v3",
             ]
         },
        
@@ -75,6 +82,15 @@ function generateMarkdown(response){
 # ${response.project_title}
 ![](https://img.shields.io/badge/Readme-100%25-green)
 
+# Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Test](#test)
+- [License](#license)
+
 ## Description: 
 
          ${response.project_description}
@@ -90,6 +106,10 @@ function generateMarkdown(response){
 ## Credits:
 
         ${response.project_credits}
+
+## Test: 
+
+        ${response.test_instructions}
 
 ## License:
     
